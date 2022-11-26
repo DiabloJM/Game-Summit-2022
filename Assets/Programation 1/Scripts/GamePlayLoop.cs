@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlayLoop : MonoBehaviour
 {
@@ -35,8 +36,8 @@ public class GamePlayLoop : MonoBehaviour
         Debug.Log("Has cerrado el juego");
     }
 
-    public void RestartGame()
+    public void RestartGame(string levelName)
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(levelName);
     }
 }
