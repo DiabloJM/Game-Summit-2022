@@ -304,9 +304,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964c3750b05b0964eb9c3e91e75a596a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 41a9d13ae5085e14bb77d368a6c4c4c1, type: 2}
   rango: 15
+  cadenciaDeDisparo: 1
   velocidadDeRotacion: 5
   parteQueRota: {fileID: 930013300927981498}
-  cadenciaDeDisparo: 1
-  prefavDeBala: {fileID: 0}
+  prefavDeBala: {fileID: 7607266477050811446, guid: 07597537b95ddb64788283fc17311660, type: 3}
   puntoDeDisparo: {fileID: 1543324203}
+  barradevida: {fileID: 0}
+  currentTime: 10
