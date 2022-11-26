@@ -37,6 +37,7 @@ public class GamePlayLoop : MonoBehaviour
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         Application.LoadLevel(Application.loadedLevel);
     }
 }
