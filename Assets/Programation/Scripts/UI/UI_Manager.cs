@@ -12,7 +12,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject Player;
     public GameObject pauseMenuUI;
     public GameObject InGameUI;
-    public GameObject PauseButtonUI;
+    public GameObject GameOverUI;
     public Sprite[] imagenDeTorretaParaCursor;
 
     [Header("TutorialSheets")]
@@ -20,9 +20,6 @@ public class UI_Manager : MonoBehaviour
     public GameObject TutorialPrt1;
     public GameObject TutorialPrt2;
     public GameObject TutorialPrt3;
-
-
-
 
     // Update is called once per frame
     void Update()
@@ -65,6 +62,14 @@ public class UI_Manager : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void DeadScreen()
+    {
+        InGameUI.SetActive(false);
+        GameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
     public void TutorialStart()
     {
         pauseMenuUI.SetActive(false);
@@ -105,31 +110,9 @@ public class UI_Manager : MonoBehaviour
         TutorialPrt3.SetActive(false);
     }
 
-    public void PlayButtonSound()
+    public void LoadScene(string levelName)
     {
-        //Aqui on que se reproduzca un sonido
-    }
-
-    public void UpdatePlayerHealth()
-    {
-        //Cada que el jugador sea da�ado, llamar esta funcion para actualizar su barra de vida
-    }
-
-    public void UpdateEnemyHealth(/*Aqui podrias meter algo para referenciar al enemigo, como un Gameobject y ingresas 'this.gameObject*/)
-    {
-        //Cada que el enemigo sea da�ado, llamar esta funcion para actualizar su barra de vida
-        //Necesita referencias individuales, suerte
-    }
-
-    public void EndGame()
-    {
-        //Time scale set to 0
-        //Display GameOver Screen
-    }
-
-    public void RestartScene()
-    {
-        //Restart current scene by name
+        SceneManager.LoadScene(levelName);
     }
 
     public void ElegirTorreta(StoreManager botonDeTorreta)
