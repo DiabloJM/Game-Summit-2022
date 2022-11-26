@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIController : MonoBehaviour
+public class UI_Manager : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
@@ -25,23 +26,25 @@ public class UIController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            
-        { Debug.Log("the game is paused");
+
+        {
+            Debug.Log("the game is paused");
             if (GameIsPaused)
             {
                 Resume();
-            } else
+            }
+            else
             {
                 Pause();
             }
         }
     }
 
-    public void Resume ()
+    public void Resume()
     {
         InGameUI.SetActive(true);
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;;
+        Time.timeScale = 1f; ;
         GameIsPaused = false;
     }
 
@@ -107,12 +110,12 @@ public class UIController : MonoBehaviour
 
     public void UpdatePlayerHealth()
     {
-        //Cada que el jugador sea daÃ±ado, llamar esta funcion para actualizar su barra de vida
+        //Cada que el jugador sea dañado, llamar esta funcion para actualizar su barra de vida
     }
 
     public void UpdateEnemyHealth(/*Aqui podrias meter algo para referenciar al enemigo, como un Gameobject y ingresas 'this.gameObject*/)
     {
-        //Cada que el enemigo sea daÃ±ado, llamar esta funcion para actualizar su barra de vida
+        //Cada que el enemigo sea dañado, llamar esta funcion para actualizar su barra de vida
         //Necesita referencias individuales, suerte
     }
 
@@ -127,4 +130,3 @@ public class UIController : MonoBehaviour
         //Restart current scene by name
     }
 }
-
