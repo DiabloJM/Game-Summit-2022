@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastMouse : MonoBehaviour
+public class ColocarTorretaConMouse : MonoBehaviour
 {
     [SerializeField]
     Color hoverColor;
@@ -26,9 +24,12 @@ public class RaycastMouse : MonoBehaviour
             Debug.Log("No puedo construir aqui Pa");
             return;
         }
-        GameObject turretToBuild = BuildManager.instance.ObtenerTorretaAConstruir();
-        BuildManager.instance.SubirContador();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0,1,0), transform.rotation);
+        if(BuildManager.instance.ObtenerContador() < 3)
+        {
+            GameObject turretToBuild = BuildManager.instance.ObtenerTorretaAConstruir();
+            BuildManager.instance.SubirContador();
+            turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        }
     }
 
     private void OnMouseEnter()

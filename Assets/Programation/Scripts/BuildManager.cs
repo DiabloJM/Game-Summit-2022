@@ -32,6 +32,10 @@ public class BuildManager : MonoBehaviour
         contadorDeTorretas += 1;
     }
 
+    public int ObtenerContador()
+    {
+        return contadorDeTorretas;
+    }
     public GameObject ObtenerTorretaAConstruir()
     {
         switch (contadorDeTorretas)
