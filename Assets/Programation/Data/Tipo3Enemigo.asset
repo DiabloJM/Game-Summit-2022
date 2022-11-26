@@ -9,6 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5281166cf104f4c82c1275284de038, type: 3}
-  m_Name: EnemigoBasico
+  m_Script: {fileID: 11500000, guid: 360ac77489fd38047882efca84f66858, type: 3}
+  m_Name: Tipo3Enemigo
   m_EditorClassIdentifier: 
+  vida: 0
+  velocidad: 0

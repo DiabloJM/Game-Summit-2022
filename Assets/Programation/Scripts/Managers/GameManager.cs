@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Generacion de enemigos")]
     [SerializeField] Generacion_Enemigos generadorEnemigos; //Referencia a Script de generación
     [SerializeField] bool estaGenerando;    //No se si sea necesario implementar esto, revisar
-    [SerializeField] int enemigosEnJuego;   //Incrementar al spawnear un enemigo
+    public int enemigosEnJuego;   //Incrementar al spawnear un enemigo
     public int numeroDeRonda; //Numero de ronda
 
 
