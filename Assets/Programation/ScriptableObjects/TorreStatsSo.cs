@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Nueva Torreta", menuName = "So`s/Torreta")]
+[CreateAssetMenu(fileName = "Nueva Torreta", menuName = "ScrObj/Torreta")]
 public class TorreStatsSo : ScriptableObject 
 {
     public int damage;

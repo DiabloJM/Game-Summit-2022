@@ -8,12 +8,10 @@ public class UI_Manager : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
+    [Header("Gameplay")]
     public GameObject Player;
-
     public GameObject pauseMenuUI;
-
     public GameObject InGameUI;
-
     public GameObject PauseButtonUI;
 
     [Header("TutorialSheets")]
@@ -21,6 +19,9 @@ public class UI_Manager : MonoBehaviour
     public GameObject TutorialPrt1;
     public GameObject TutorialPrt2;
     public GameObject TutorialPrt3;
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -110,12 +111,12 @@ public class UI_Manager : MonoBehaviour
 
     public void UpdatePlayerHealth()
     {
-        //Cada que el jugador sea dañado, llamar esta funcion para actualizar su barra de vida
+        //Cada que el jugador sea daï¿½ado, llamar esta funcion para actualizar su barra de vida
     }
 
     public void UpdateEnemyHealth(/*Aqui podrias meter algo para referenciar al enemigo, como un Gameobject y ingresas 'this.gameObject*/)
     {
-        //Cada que el enemigo sea dañado, llamar esta funcion para actualizar su barra de vida
+        //Cada que el enemigo sea daï¿½ado, llamar esta funcion para actualizar su barra de vida
         //Necesita referencias individuales, suerte
     }
 
