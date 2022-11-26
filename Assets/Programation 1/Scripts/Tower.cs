@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GamePlayLoop ciclo;
+
+
+     void Start()
     {
-        
+        ciclo = FindObjectOfType<GamePlayLoop>();    
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        switch (other.gameObject.tag)
+        {
+            case "Enemy":
+                Debug.Log("GameOver");
+                ciclo.ShowGameOver();
+                
+                break;
+        }
     }
+
+    
 }
