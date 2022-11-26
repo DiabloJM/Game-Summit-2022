@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TowerControl : MonoBehaviour
 {
-    public float angulo;
+    public float limiteInferior; //Ángulo límite inferior
+    public float limiteSuperior; //Ángulo límite superior
     private void Update()
     {
         //Obtenemos la posicion de la torre en la pantalla
@@ -12,17 +13,17 @@ public class TowerControl : MonoBehaviour
         //Obtenemos la posicion del mouse en la pantalla
         Vector2 mouseEnPantalla = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
         //Obtenemos el ángulo entre la torre y el mouse
-        angulo = AnguloEntrePuntos(posicionEnPantalla, mouseEnPantalla);
+        float angulo = AnguloEntrePuntos(posicionEnPantalla, mouseEnPantalla);
         //Limitar el ángulo de rotacion
         
-        if(angulo > 25.0f)
+        if(angulo > limiteSuperior)
         {
-            angulo = 25.0f;
+            angulo = limiteSuperior;
         }
 
-        if(angulo < -165.0f)
+        if(angulo < limiteInferior)
         {
-            angulo = -165.0f;
+            angulo = limiteInferior;
         }
         
         //Modificamos la rotacion de la torre
