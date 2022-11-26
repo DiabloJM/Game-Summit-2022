@@ -147,10 +147,10 @@ MonoBehaviour:
   cadenciaDeDisparo: 1
   velocidadDeRotacion: 5
   parteQueRota: {fileID: 4938520787342177645}
-  prefavDeBala: {fileID: 0}
+  prefavDeBala: {fileID: 7607266477050811446, guid: 07597537b95ddb64788283fc17311660, type: 3}
   puntoDeDisparo: {fileID: 5215507390407348476}
   barradevida: {fileID: 0}
-  currentTime: 0
+  currentTime: 10
 --- !u!1 &5215507390407348477
 GameObject:
   m_ObjectHideFlags: 0

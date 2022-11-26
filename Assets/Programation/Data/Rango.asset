@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d59ba53c12809ab42912e5b516d7b308, type: 3}
-  m_Name: Sniper
+  m_Name: Rango
   m_EditorClassIdentifier: 
   damage: 5
   rango: 35
