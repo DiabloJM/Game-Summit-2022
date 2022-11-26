@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public int enemigosEnJuego;   //Incrementar al spawnear un enemigo
     public int numeroDeRonda; //Numero de ronda
 
+    [Header("Posiciones de base")]
+    public GameObject[] basePositions;
+
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
