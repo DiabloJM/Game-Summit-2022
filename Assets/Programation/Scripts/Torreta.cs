@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Torreta : MonoBehaviour
 {
-    [Header("Torreta")]
-    public Transform objetivo;
-    [SerializeField]
-    private float rango = 15f;
-    //public string enemigoTag = "enemigo";
+    [Header("Enemigo")]
+    private Transform objetivo;
+
+    [Header("Torreta Movimiento")]
+    [SerializeField] private float rango = 15f;
+    [SerializeField] private float velocidadDeRotacion = 5.0f;
+    public Transform parteQueRota;
+
+    [Header("Torreta Disparo")]
+    public float cadenciaDeDisparo = 1.0f;
+    private float timerDeDisparo = 0.0f; 
+
+    [Header("Bala")]
+    public GameObject prefavDeBala;
+    public Transform puntoDeDisparo;
     
     void Start()
     {
@@ -40,6 +50,28 @@ public class Torreta : MonoBehaviour
         if(objetivo == null)
         {
             return;
+        }
+
+        Vector3 direccionTorreta = objetivo.position - transform.position;
+        Quaternion haciaDondeRota = Quaternion.LookRotation(direccionTorreta);
+        Vector3 rotacion = Quaternion.Lerp(parteQueRota.rotation, haciaDondeRota, Time.deltaTime * velocidadDeRotacion).eulerAngles;
+        parteQueRota.rotation = Quaternion.Euler(0f, rotacion.y, 0f);
+
+        if(timerDeDisparo <= 0f)
+        {
+            Shoot();
+            timerDeDisparo = 1f / cadenciaDeDisparo;
+        }
+        timerDeDisparo -= Time.deltaTime;
+    }
+
+    public void Shoot()
+    {
+        GameObject ataqueBala = (GameObject)Instantiate (prefavDeBala, puntoDeDisparo.position, puntoDeDisparo.rotation);
+        Bala bala = ataqueBala.GetComponent<Bala>();
+        if(bala != null)
+        {
+            bala.Buscar(objetivo);
         }
     }
 
