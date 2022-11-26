@@ -22,11 +22,11 @@ public class Generacion_Enemigos : MonoBehaviour
     private void Start()
     {
         //Llamamos a la corutina para generar enemigos
-        StartCoroutine(GenerarEnemigos());
+        StartCoroutine(IniciarGeneracionEnemigos());
     }
 
     //Corutina para generar a los enemigos necesarios por ronda
-    IEnumerator GenerarEnemigos()
+    IEnumerator IniciarGeneracionEnemigos()
     {
         //Tiempo de espera al inicio de ronda
         yield return 3.0f;
@@ -56,14 +56,15 @@ public class Generacion_Enemigos : MonoBehaviour
             yield return 1.5f;
         }
 
-        //Se suma la cantidad de enemigos que se generarán la siguiente ronda y pasamos de ronda
+        //Se suma la cantidad de enemigos que se generarï¿½n la siguiente ronda y pasamos de ronda
         enemigos += 2;
         ronda++;
 
-        //Hacemos que la corutina se llame así misma para que sea recursiva mientras la ronda sea menor a 11
+        
+        //Hacemos que la corutina se llame asï¿½ misma para que sea recursiva mientras la ronda sea menor a 11
         if(ronda < 11)
         {
-            StartCoroutine(GenerarEnemigos());
+            StartCoroutine(IniciarGeneracionEnemigos());
         }
     }
 }
