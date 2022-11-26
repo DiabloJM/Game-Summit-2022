@@ -13,6 +13,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject InGameUI;
     public GameObject PauseButtonUI;
+    public Sprite[] imagenDeTorretaParaCursor;
 
     [Header("TutorialSheets")]
     public GameObject Tutorial_UI;
@@ -129,5 +130,17 @@ public class UI_Manager : MonoBehaviour
     public void RestartScene()
     {
         //Restart current scene by name
+    }
+
+    public void ElegirTorreta(StoreManager botonDeTorreta)
+    {
+        if (ScoreManager.scoreValue < botonDeTorreta.precio)
+            return;
+        Texture2D cursor = botonDeTorreta.cursor;
+        Vector2 posicion = botonDeTorreta.posicion;
+        Cursor.SetCursor(cursor, posicion, CursorMode.Auto);
+        BuildManager.instance.estoyConstruyendo = true;
+        BuildManager.precioActual = botonDeTorreta.precio;
+        BuildManager.instance.contadorDeTorretas = botonDeTorreta.torretaAConstruir;
     }
 }

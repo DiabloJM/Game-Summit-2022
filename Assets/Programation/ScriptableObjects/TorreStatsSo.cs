@@ -7,6 +7,6 @@ public class TorreStatsSo : ScriptableObject
 {
     public int damage;
     public float rango;
-    public float cadencias;
+    public float cadencia;
 }
 

@@ -1,32 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Torreta : MonoBehaviour
 {
-    [Header("Enemigo")]
+    
     private Transform objetivo;
 
+    [Header("Stats")]
+    [SerializeField] TorreStatsSo stats;
+    [SerializeField] float rango;
+    [SerializeField] float cadenciaDeDisparo;
+
     [Header("Torreta Movimiento")]
-    [SerializeField] private float rango = 15f;
     [SerializeField] private float velocidadDeRotacion = 5.0f;
     public Transform parteQueRota;
 
     [Header("Torreta Disparo")]
-    public float cadenciaDeDisparo = 1.0f;
     private float timerDeDisparo = 0.0f; 
 
     [Header("Bala")]
     public GameObject prefavDeBala;
     public Transform puntoDeDisparo;
+
+    [Header("Tiempo De Vida")]
+    public Slider barradevida;
+    public float currentTime;
     
     void Start()
     {
+        //hace que la funcion de ActualizarObjetivo se este llamando desde el segundo 0 y cada 0.5 secs
         InvokeRepeating("ActualizarObjetivo", 0f, 0.5f);
+        //activa la barra de vida en el cambas ((cambiar a una que se instancie en el mundo))
+        barradevida.gameObject.SetActive(true);
+        //agarra los valores de el So de la torre y los guarda 
+        rango = stats.rango;
+        cadenciaDeDisparo = stats.cadencia;
     }
 
     public void ActualizarObjetivo()
     {
+        //buaca todos los gO con el tag de enemigo
         GameObject[] enemigos = GameObject.FindGameObjectsWithTag("enemigo");
         float distanciaMasCorta = Mathf.Infinity;
         GameObject enemigoMasCercano = null;
@@ -47,6 +62,16 @@ public class Torreta : MonoBehaviour
 
     void Update()
     {
+
+        currentTime -= 1 * Time.deltaTime;
+        barradevida.value = currentTime;
+
+        if (currentTime <= 0f)
+        {
+            barradevida.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+
         if(objetivo == null)
         {
             return;
