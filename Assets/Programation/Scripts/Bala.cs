@@ -9,6 +9,8 @@ public class Bala : MonoBehaviour
 
     public float velocidadBala = 50f;
 
+    //private int damage = 4;
+
     public void Buscar(Transform _objetivo)
     {
         objetivo = _objetivo;
@@ -37,7 +39,7 @@ public class Bala : MonoBehaviour
 
     public void GolpeEnemigo()
     {
-        Debug.Log("GolpeEnemigo");
+        Destroy(gameObject);
     }
 
 }
