@@ -4,8 +4,13 @@ public class BuildManager : MonoBehaviour
 {
     //Sirve para referenciar este código en otros códigos
     public static BuildManager instance;
+
+    public static int precioActual;
     //Para cambiar entre torretas conforme las colocas
     public int contadorDeTorretas = 0;
+
+    //Para saber si el jugador esta queriendo colocar una torreta
+    public bool estoyConstruyendo;
 
     private void Awake()
     {
@@ -17,7 +22,6 @@ public class BuildManager : MonoBehaviour
         }
         instance = this;
     }
-
     public GameObject torretaStandardPrefab; //Torreta de prueba
     public GameObject torreta1, torreta2, torreta3; //Las torretas en forma de prefabs a colocar
 
@@ -27,15 +31,6 @@ public class BuildManager : MonoBehaviour
         //torretaAContstruir = torretaStandardPrefab; 
     }*/
 
-    public void SubirContador()
-    {
-        contadorDeTorretas += 1;
-    }
-
-    public int ObtenerContador()
-    {
-        return contadorDeTorretas;
-    }
     public GameObject ObtenerTorretaAConstruir()
     {
         switch (contadorDeTorretas)
