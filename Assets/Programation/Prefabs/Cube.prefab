@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3352678323871938968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.5, y: 0.8711, z: 0.5}
+  m_LocalScale: {x: 0.8, y: 0.05, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7845d85e0351e94c9e82fa323560644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 0.5803922}
+  hoverColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 0.5803922}
   rend: {fileID: 0}
-  startColor: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 0}
+  startColor: {r: 0.49803925, g: 0.5019608, b: 0.5019608, a: 1}
+  "est\xE1Ocupado": 0
