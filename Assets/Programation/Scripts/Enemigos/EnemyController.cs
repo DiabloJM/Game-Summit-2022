@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
     /// touching another rigidbody/collider.
     /// </summary>
     /// <param name="other">The Collision data associated with this collision.</param>
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         switch (other.gameObject.tag)
         {
@@ -78,6 +78,7 @@ public class EnemyController : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
+            ScoreManager.addScore();
             manager.enemigosEnJuego--;
         }
     }

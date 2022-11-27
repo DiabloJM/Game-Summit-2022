@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void addScore()
+    public static void addScore()
     {
         scoreValue += 100;
     }
