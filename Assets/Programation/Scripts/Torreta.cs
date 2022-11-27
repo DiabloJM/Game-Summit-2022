@@ -115,7 +115,7 @@ public class Torreta : MonoBehaviour
     public void Desagaste()
     {
         //le va quitando 2 de vida por segundo a la torreta
-        timeTorre -= 2 * Time.deltaTime;
+        timeTorre -= 3 * Time.deltaTime;
         //va reduciendo la barra de desgaste de la torreta
         barradevida.fillAmount = timeTorre / 100f;
                         //barradevida.value = currentTime;

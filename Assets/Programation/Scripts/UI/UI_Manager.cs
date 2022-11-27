@@ -24,9 +24,15 @@ public class UI_Manager : MonoBehaviour
     public Animator TitleImage;
     public AudioSource AudioInicio;
 
+    public ScoreManager score;
+
+    public Dinero dineroSo;
+
     void Start()
     {
         Application.targetFrameRate = 60;
+        score = FindObjectOfType<ScoreManager>();
+        
     }
 
     // Update is called once per frame
@@ -74,6 +80,7 @@ public class UI_Manager : MonoBehaviour
     {
         InGameUI.SetActive(false);
         GameOverUI.SetActive(true);
+        dineroSo.dinero = 500;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -123,6 +130,7 @@ public class UI_Manager : MonoBehaviour
 
     public void StartingGame()
     {
+        
         StartCoroutine(Arranque());
     }
 

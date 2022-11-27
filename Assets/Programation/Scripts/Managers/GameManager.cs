@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public float vidaMax = 10;
     public Image vidaBar;
 
+    public Text Rondas;
+
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
     /// any of the Update methods is called the first time.
@@ -29,10 +31,11 @@ public class GameManager : MonoBehaviour
 
     void CheckForEnemies()
     {
-        if (enemigosEnJuego == 0 && numeroDeRonda <= 10)
+        if (enemigosEnJuego <= 0 && numeroDeRonda <= 10)
         {
             LlamarInicioDeGeneracion();
             numeroDeRonda++;
+           
             ComportamientoBase.MoverPosicion();
         }
     }
@@ -42,9 +45,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Update()
     {
+        Rondas.text = "Round: " + numeroDeRonda.ToString();
         if (numeroDeRonda == 11 && enemigosEnJuego == 0)
         {
             //Win Condition
+            SceneManager.LoadScene("WinScreen");
             Debug.Log("Ganaste");
         }
 
