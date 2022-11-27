@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
 
-
     [Header("Caracteristicas")] //Datos del 
     [SerializeField] int vida;
+    [SerializeField] int vidaMax;
     [SerializeField] float velocidad;
 
     [Header("Referencias")]   
     [SerializeField] StatsEnemigos statData; //Referencia a tabla de datos con caracteristicas del enemigo
     UnityEngine.AI.NavMeshAgent navAgent;
     [SerializeField] GameManager manager;
+
+    [Header("vida Bar")]
+    public Image vidaBar;
 
 
     /// <summary>
@@ -24,6 +28,7 @@ public class EnemyController : MonoBehaviour
     {
         //Setup data values
         vida = statData.vida;
+        vidaMax = statData.vida;
         velocidad = statData.velocidad;
 
 
@@ -67,11 +72,18 @@ public class EnemyController : MonoBehaviour
             break;
         }
 
+        VidaBar();
+
         //Si la vida es menor o igual a 0 destruye el enemigo
         if (vida <= 0)
         {
             Destroy(this.gameObject);
             manager.enemigosEnJuego--;
         }
+    }
+
+    public void VidaBar()
+    {
+        vidaBar.fillAmount = vida / vidaMax;
     }
 }

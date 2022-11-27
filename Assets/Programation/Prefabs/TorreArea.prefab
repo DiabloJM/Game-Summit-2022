@@ -57,19 +57,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477984060675930748}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.20642212, y: -0.29357782, z: 0.06508463, w: 0.9311101}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1477984061689257201}
   m_Father: {fileID: 1477984060913202263}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: -35, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.95}
-  m_SizeDelta: {x: 2.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.1027, y: 2.83}
+  m_SizeDelta: {x: 1.6742, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1477984060675930744
 Canvas:
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 1477984060745439989}
   - component: {fileID: 1477984060745439988}
   m_Layer: 0
-  m_Name: Image
+  m_Name: VidaAreaBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477984060745439990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000000017695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167,8 +167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -0.000000007450581}
+  m_SizeDelta: {x: 1.6742, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1477984060745439989
 CanvasRenderer:
@@ -359,7 +359,7 @@ GameObject:
   - component: {fileID: 1477984061689257215}
   - component: {fileID: 1477984061689257214}
   m_Layer: 0
-  m_Name: Image
+  m_Name: VidaAreaBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,7 +384,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1477984061689257215
 CanvasRenderer:

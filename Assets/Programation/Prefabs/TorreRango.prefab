@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 5585391058262789402}
   - component: {fileID: 5585391058262789401}
   m_Layer: 0
-  m_Name: Image
+  m_Name: VidaRangoBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5585391058262789400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0000001099}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,8 +182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000000074506, y: 0.000000059604645}
+  m_SizeDelta: {x: 1.6742, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5585391058262789402
 CanvasRenderer:
@@ -249,19 +249,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5585391058932151416}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.20642212, y: -0.29357782, z: 0.06508463, w: 0.9311101}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0049}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5585391059064578337}
   m_Father: {fileID: 5585391059456085571}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: -35, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.02}
-  m_SizeDelta: {x: 2.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0867, y: 1.9046}
+  m_SizeDelta: {x: 1.6742, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5585391058932151420
 Canvas:
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 5585391059064578339}
   - component: {fileID: 5585391059064578338}
   m_Layer: 0
-  m_Name: Image
+  m_Name: VidaRangoBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0.2454}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5585391059064578339
 CanvasRenderer:
@@ -425,7 +425,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5585391059456085569}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.49, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
