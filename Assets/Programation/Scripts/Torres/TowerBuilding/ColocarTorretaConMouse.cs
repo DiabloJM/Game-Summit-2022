@@ -37,6 +37,7 @@ public class ColocarTorretaConMouse : MonoBehaviour
         turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         BuildManager.instance.estoyConstruyendo = false;
+
         ScoreManager.scoreValue -= BuildManager.precioActual;
         BuildManager.precioActual = 0;
         estaOcupado = true;
