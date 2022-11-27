@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public static int scoreValue = 500;
     Text Score;
 
     void Start()
@@ -18,8 +18,8 @@ public class ScoreManager : MonoBehaviour
     {
         Score.text = "Money: " + scoreValue;
         
-        if(Input.GetKeyDown(KeyCode.KeypadPlus)) //Para testeos
-            addScore();
+        /*if(Input.GetKeyDown(KeyCode.KeypadPlus)) //Para testeos
+            addScore();*/
         if (scoreValue <= 0)
         {
             scoreValue = 0;

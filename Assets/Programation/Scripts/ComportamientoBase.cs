@@ -1,32 +1,23 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ComportamientoBase : MonoBehaviour
 {
-    GameObject[] tilesParaColocarBase;
-    int contadorDeOleadasProvisional = 0;
+    static GameObject[] tilesParaColocarBase;
+    static GameObject thisGameobject;
 
-    // Start is called before the first frame update
     void Start()
     {
         tilesParaColocarBase = GameObject.FindGameObjectsWithTag("Adyacente");
+        thisGameobject = gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            contadorDeOleadasProvisional++;
-            MoverPosicion();
-        }
-    }
-
-    void MoverPosicion()
+    public static void MoverPosicion()
     {
         int random = Random.Range(0, tilesParaColocarBase.Length);
         ColocarTorretaConMouse tile = tilesParaColocarBase[random].GetComponent<ColocarTorretaConMouse>();
-        if (!tile.est·Ocupado)
-            transform.position = tilesParaColocarBase[random].transform.position;
+        if (!tile.estaOcupado)
+            thisGameobject.transform.position = tilesParaColocarBase[random].transform.position;
         else
             MoverPosicion();
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class GameManager : MonoBehaviour
     public int numeroDeRonda; //Numero de ronda
 
     [Header("Vida Base")]
-    public int vidaBase = 5;
+    public int vidaBase = 10;
+    public float vidaMax = 10;
+    public Image vidaBar;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled just before
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             LlamarInicioDeGeneracion();
             numeroDeRonda++;
+            ComportamientoBase.MoverPosicion();
         }
     }
 
@@ -48,10 +52,17 @@ public class GameManager : MonoBehaviour
             //Lose Condition
             Debug.Log("Mamaste");
         }
+
+        Desgaste();
     }
 
     public void LlamarInicioDeGeneracion()
     {
         generadorEnemigos.CallRoundStartCoRoutine();
+    }
+
+    public void Desgaste()
+    {
+        vidaBar.fillAmount = vidaBase / vidaMax;
     }
 }
