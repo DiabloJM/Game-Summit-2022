@@ -30,5 +30,10 @@ public class UI_Menu_Max : MonoBehaviour
 
     }
 
+    public void moverCreditos()
+    {
+        this.transform.Translate(Vector3.up * Time.deltaTime*speed);
+    }
+
     
 }
