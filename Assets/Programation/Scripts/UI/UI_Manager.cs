@@ -13,13 +13,21 @@ public class UI_Manager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject InGameUI;
     public GameObject GameOverUI;
-    public Sprite[] imagenDeTorretaParaCursor;
 
     [Header("TutorialSheets")]
     public GameObject Tutorial_UI;
     public GameObject TutorialPrt1;
     public GameObject TutorialPrt2;
     public GameObject TutorialPrt3;
+
+    [Header("MenuUI")]
+    public Animator TitleImage;
+    public AudioSource AudioInicio;
+
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     // Update is called once per frame
     void Update()
@@ -115,6 +123,11 @@ public class UI_Manager : MonoBehaviour
         SceneManager.LoadScene(levelName);
     }
 
+    public void StartingGame()
+    {
+        StartCoroutine(Arranque());
+    }
+
     public void ElegirTorreta(StoreManager botonDeTorreta)
     {
         if (ScoreManager.scoreValue < botonDeTorreta.precio)
@@ -125,5 +138,16 @@ public class UI_Manager : MonoBehaviour
         BuildManager.instance.estoyConstruyendo = true;
         BuildManager.precioActual = botonDeTorreta.precio;
         BuildManager.instance.contadorDeTorretas = botonDeTorreta.torretaAConstruir;
+    }
+
+    IEnumerator Arranque()
+    {
+        TitleImage.SetBool("startGame", true);
+
+        AudioInicio.Play();
+
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadScene("ColocarTorres");
     }
 }
