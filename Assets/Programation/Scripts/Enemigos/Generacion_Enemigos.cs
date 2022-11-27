@@ -6,6 +6,7 @@ public class Generacion_Enemigos : MonoBehaviour
 {
     //Variables publicas
     [Header("Referencias")]
+    
     public Transform spawn; //Lugar donde los enemigos se van a generar
     public GameManager manager; //Referencia al GameManager
 
