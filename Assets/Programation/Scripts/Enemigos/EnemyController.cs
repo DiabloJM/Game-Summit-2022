@@ -45,15 +45,15 @@ public class EnemyController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Basico": //Colisiona con un proyectil basico
-                vida -= 2;
+                vida -= 15;
             break;
 
             case "Rango": //Proyectil de Torre de rango
-                vida -= 5;
+                vida -= 50;
             break;
 
             case "Area":    //Proyectil de torre de area
-                vida -= 4;
+                vida -= 30;
             break;
             
             case "Base":
