@@ -13,7 +13,6 @@ public class UI_Manager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject InGameUI;
     public GameObject GameOverUI;
-    public Sprite[] imagenDeTorretaParaCursor;
 
     [Header("TutorialSheets")]
     public GameObject Tutorial_UI;
@@ -24,6 +23,11 @@ public class UI_Manager : MonoBehaviour
     [Header("MenuUI")]
     public Animator TitleImage;
     public AudioSource AudioInicio;
+
+    void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     // Update is called once per frame
     void Update()
@@ -144,6 +148,6 @@ public class UI_Manager : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
-        SceneManager.LoadScene("UI_Test");
+        SceneManager.LoadScene("ColocarTorres");
     }
 }

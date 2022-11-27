@@ -1002,7 +1002,6 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 0}
   InGameUI: {fileID: 0}
   GameOverUI: {fileID: 0}
-  imagenDeTorretaParaCursor: []
   Tutorial_UI: {fileID: 0}
   TutorialPrt1: {fileID: 0}
   TutorialPrt2: {fileID: 0}
@@ -1696,7 +1695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1767603196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,7 +1797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1851226032
 MonoBehaviour:
   m_ObjectHideFlags: 0

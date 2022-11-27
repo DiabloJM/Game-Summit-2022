@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("CheckForEnemies",0.0f, 3.0f);
+
+        Application.targetFrameRate = 60;
     }
 
     void CheckForEnemies()
