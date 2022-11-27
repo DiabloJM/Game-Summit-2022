@@ -6,21 +6,50 @@ public class GameManager : MonoBehaviour
 {
     [Header("Generacion de enemigos")]
     [SerializeField] Generacion_Enemigos generadorEnemigos; //Referencia a Script de generación
-    [SerializeField] bool estaGenerando;    //No se si sea necesario implementar esto, revisar
     public int enemigosEnJuego;   //Incrementar al spawnear un enemigo
     public int numeroDeRonda; //Numero de ronda
 
-    [Header("Posiciones de base")]
-    public GameObject[] basePositions;
+    [Header("Vida Base")]
+    public int vidaBase = 5;
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        InvokeRepeating("CheckForEnemies",0.0f, 3.0f);
+    }
+
+    void CheckForEnemies()
+    {
+        if (enemigosEnJuego == 0 && numeroDeRonda <= 10)
+        {
+            LlamarInicioDeGeneracion();
+            numeroDeRonda++;
+        }
+    }
 
     /// <summary>
     /// Update is called every frame, if the MonoBehaviour is enabled.
     /// </summary>
     void Update()
     {
-        if (enemigosEnJuego == 0){
-            generadorEnemigos.IniciarGeneracionEnemigos();
+        if (numeroDeRonda == 11 && enemigosEnJuego == 0)
+        {
+            //Win Condition
+            Debug.Log("Ganaste");
         }
+
+        if (vidaBase <= 0)
+        {
+            //Lose Condition
+            Debug.Log("Mamaste");
+        }
+    }
+
+    public void LlamarInicioDeGeneracion()
+    {
+        generadorEnemigos.CallRoundStartCoRoutine();
     }
 }
