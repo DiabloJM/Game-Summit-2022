@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Score.text = "Money: " + scoreValue;
+        Score.text = "Dinero " + scoreValue;
         
         /*if(Input.GetKeyDown(KeyCode.KeypadPlus)) //Para testeos
             addScore();*/
@@ -33,6 +33,6 @@ public class ScoreManager : MonoBehaviour
 
     public void setToZero()
     {
-        scoreValue = 0;
+        scoreValue = 500;
     }
 }

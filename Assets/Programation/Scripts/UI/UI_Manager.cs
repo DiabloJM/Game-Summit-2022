@@ -90,8 +90,6 @@ public class UI_Manager : MonoBehaviour
     {
         Tutorial_UI.SetActive(false);
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
     }
 
     public void Part1Next()
