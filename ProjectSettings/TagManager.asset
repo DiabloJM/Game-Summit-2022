@@ -9,6 +9,8 @@ TagManager:
   - Rango
   - Area
   - Adyacente
+  - enemigo
+  - Base
   layers:
   - Default
   - TransparentFX

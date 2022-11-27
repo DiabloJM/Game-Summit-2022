@@ -28,8 +28,12 @@ public class Generacion_Enemigos : MonoBehaviour
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         //Testing singleton de mecanica, funcional en primer ciclo
-        //StartCoroutine(IniciarGeneracionEnemigos());
         //Debug.Log("Coroutine called");
+    }
+
+    public void CallRoundStartCoRoutine()
+    {
+        StartCoroutine(IniciarGeneracionEnemigos());
     }
 
     //Corutina para generar a los enemigos necesarios por ronda
@@ -38,7 +42,7 @@ public class Generacion_Enemigos : MonoBehaviour
         Debug.Log("Coroutine Start");
 
         //Tiempo de espera al inicio de ronda
-        yield return 4.0f;
+        yield return new WaitForSeconds(2.0f);
 
         //Generar enemigos
         for(int i = 0; i < enemigos; i++)
@@ -62,7 +66,7 @@ public class Generacion_Enemigos : MonoBehaviour
             }
 
             //Tiempo de espera entre la generacion de un enemigo y otro
-            yield return 2.5f;
+            yield return new WaitForSeconds(1.0f);
         }
 
         //Se suma la cantidad de enemigos que se generar�n la siguiente ronda y pasamos de ronda
