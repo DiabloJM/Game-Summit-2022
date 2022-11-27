@@ -34,7 +34,7 @@ public class ColocarTorretaConMouse : MonoBehaviour
         -y devuelve el precio actual a 0 por si acaso
         */
         GameObject turretToBuild = BuildManager.instance.ObtenerTorretaAConstruir();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + new Vector3(0, 1, 0), transform.rotation);
+        turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         BuildManager.instance.estoyConstruyendo = false;
         ScoreManager.scoreValue -= BuildManager.precioActual;

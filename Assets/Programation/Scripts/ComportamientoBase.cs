@@ -26,7 +26,7 @@ public class ComportamientoBase : MonoBehaviour
         int random = Random.Range(0, tilesParaColocarBase.Length);
         ColocarTorretaConMouse tile = tilesParaColocarBase[random].GetComponent<ColocarTorretaConMouse>();
         if (!tile.est·Ocupado)
-            transform.position = tilesParaColocarBase[random].transform.position + new Vector3(0, 1, 0);
+            transform.position = tilesParaColocarBase[random].transform.position;
         else
             MoverPosicion();
     }
