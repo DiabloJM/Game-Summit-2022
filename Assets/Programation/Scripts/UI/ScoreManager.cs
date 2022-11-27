@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static int scoreValue = 0;
-    static Text Score;
+    Text Score;
 
     void Start()
     {
@@ -14,14 +14,16 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() //Cuando se gane Score matando enemigos, remplazar esta función por UpdateScore
+    void Update()
     {
         Score.text = "Money: " + scoreValue;
         
         if(Input.GetKeyDown(KeyCode.KeypadPlus)) //Para testeos
             addScore();
         if (scoreValue <= 0)
+        {
             scoreValue = 0;
+        }
     }
 
     public void addScore()
@@ -29,10 +31,8 @@ public class ScoreManager : MonoBehaviour
         scoreValue += 100;
     }
 
-    public static void UpdateScore() //De momento no haces nada pana
+    public void setToZero()
     {
-        if (scoreValue <= 0)
-            scoreValue = 0;
-        Score.text = "Money: " + scoreValue;
+        scoreValue = 0;
     }
 }
