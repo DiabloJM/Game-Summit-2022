@@ -22,12 +22,17 @@ public class EnemyController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        /* = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //Setup data values
+        vida = statData.vida;
+        velocidad = statData.velocidad;
+
+
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         navAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navAgent.speed = velocidad;
 
-        manager.enemigosEnJuego++;*/
+        manager.enemigosEnJuego++;
     }
 
     /// <summary>
@@ -40,16 +45,22 @@ public class EnemyController : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Basico": //Colisiona con un proyectil basico
-                vida -= 2;
+                vida -= 15;
             break;
 
             case "Rango": //Proyectil de Torre de rango
-                vida -= 5;
+                vida -= 50;
             break;
 
             case "Area":    //Proyectil de torre de area
-                vida -= 4;
+                vida -= 30;
             break;
+            
+            case "Base":
+                Destroy(gameObject);
+                manager.vidaBase--;
+                manager.enemigosEnJuego--;
+                break;
 
             default:
                 Debug.Log("Enemy: No valid tag");
@@ -60,6 +71,7 @@ public class EnemyController : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(this.gameObject);
+            manager.enemigosEnJuego--;
         }
     }
 }

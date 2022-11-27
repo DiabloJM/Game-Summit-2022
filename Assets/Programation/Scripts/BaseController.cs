@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
-    [SerializeField] int vida;
+    //DEPRECATED, NO USADO, BORRAR AL CONFIRMAR INUTILIDAD
+
+    /*[SerializeField] int vida;
 
     [SerializeField] GameManager _GameManager;
     [SerializeField] UI_Manager _UIManager;
@@ -25,7 +27,7 @@ public class BaseController : MonoBehaviour
     }
 
     //Llamado para reposicionar la base entre las posiciones posibles
-    void ReposicionarBase(/*Podemos hacer un input para que el Manager calcule las posiciones y solo se la entregue a la base*/)
+    void ReposicionarBase(/*Podemos hacer un input para que el Manager calcule las posiciones y solo se la entregue a la base)
     {
         //Hacer proceso para reposicionar base
     }
@@ -42,5 +44,6 @@ public class BaseController : MonoBehaviour
             vida--;
             Debug.Log("Collision de Base: Enemigo");
         }
-    }
+    }*/
+
 }

@@ -6,5 +6,5 @@ using UnityEngine;
 public class StatsEnemigos : ScriptableObject
 {
     public int vida;
-    public int velocidad;
+    public float velocidad;
 }
