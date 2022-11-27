@@ -9,6 +9,7 @@ public class ColocarTorretaConMouse : MonoBehaviour
     [SerializeField]
     Color startColor;
 
+    public bool est·Ocupado;
     GameObject turret;
 
     void Start()
@@ -38,6 +39,7 @@ public class ColocarTorretaConMouse : MonoBehaviour
         BuildManager.instance.estoyConstruyendo = false;
         ScoreManager.scoreValue -= BuildManager.precioActual;
         BuildManager.precioActual = 0;
+        est·Ocupado = true;
     }
 
     private void OnMouseEnter()

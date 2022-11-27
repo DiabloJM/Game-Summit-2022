@@ -18,6 +18,8 @@ public class ScoreManager : MonoBehaviour
     {
         Score.text = "Money: " + scoreValue;
         
+        if(Input.GetKeyDown(KeyCode.KeypadPlus)) //Para testeos
+            addScore();
         if (scoreValue <= 0)
         {
             scoreValue = 0;
