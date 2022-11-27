@@ -22,12 +22,12 @@ public class EnemyController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        /* = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         navAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navAgent.speed = velocidad;
 
-        manager.enemigosEnJuego++;
+        manager.enemigosEnJuego++;*/
     }
 
     /// <summary>

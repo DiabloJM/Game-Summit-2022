@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tipo1Enemigo
   m_EditorClassIdentifier: 
   vida: 0
-  velocidad: 0
+  velocidad: 5

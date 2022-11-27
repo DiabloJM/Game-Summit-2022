@@ -18,7 +18,7 @@ public class BaseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vida == 0)
+        if (vida <= 0)
         {
             //Call UI Manager for Game Over screen
         }
@@ -28,5 +28,19 @@ public class BaseController : MonoBehaviour
     void ReposicionarBase(/*Podemos hacer un input para que el Manager calcule las posiciones y solo se la entregue a la base*/)
     {
         //Hacer proceso para reposicionar base
+    }
+
+    /// <summary>
+    /// OnCollisionEnter is called when this collider/rigidbody has begun
+    /// touching another rigidbody/collider.
+    /// </summary>
+    /// <param name="other">The Collision data associated with this collision.</param>
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Enemigo")
+        {
+            vida--;
+            Debug.Log("Collision de Base: Enemigo");
+        }
     }
 }
