@@ -57,7 +57,7 @@ public class UI_Manager : MonoBehaviour
     {
         InGameUI.SetActive(true);
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f; ;
+        Time.timeScale = 1f; 
         GameIsPaused = false;
     }
 
@@ -125,6 +125,7 @@ public class UI_Manager : MonoBehaviour
 
     public void LoadScene(string levelName)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(levelName);
     }
 
